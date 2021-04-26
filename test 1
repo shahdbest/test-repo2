@@ -1,0 +1,226 @@
+
+
+
+
+dbms  
+
+RDBMS 
+
+R- Relation - TABLE
+
+MySQL
+Oracle  -- 
+MSSql
+
+
+sql
+
+Employee
+
+select * from employee;
+
+
+gmail
+
+
+dxctesting01@gmail.com
+987654321@pass
+
+
+
+user : sysdba
+
+built-in : hr , system
+
+custom user : anyuser 
+
+
+open -> sql cmd line or sql plus
+
+conn /as sysdba
+
+--select user from dual;
+
+create user dxctest identified by pass;
+
+conn dxctest
+          pass
+
+conn /as sysdba
+
+
+grant create session to dxctest;
+
+conn dxctest
+          pass
+
+
+
+select user from dual;
+
+
+//Note: u can grant previlage / role(grp of prvlg)
+
+
+DBA  /  sql   / pl-sql
+
+
+
+conn /as sysdba
+
+
+grant dba to dxctest;
+
+//NOTE: dba is a role 
+
+
+conn dxctest
+pass
+
+create table student
+(
+name varchar(50),
+rollNo int ,
+sem int,
+dept varchar(20)
+);
+
+
+insert into student values('raj','1','5','CSE');
+
+
+insert into student values('raja',2,'3','CSE');
+
+
+insert into student values(raju,3,'3','CSE');
+// error
+
+
+insert into student values('raju',3,'7');
+
+// unknown -- null 
+// null != zero or an empty space 
+
+insert into student values('raju',3,'7',null);
+
+
+select * from student;
+
+select * from student where sem=7;
+
+
+select * from student where dept=null;
+
+
+
+select * from student where dept is null;
+
+
+desc student
+
+select user from dual;
+
+
+desc dual;
+
+
+select user from student;
+
+
+select count(name) from student;
+
+
+select 10 + 20 from dual;
+
+
+select 10 + 20  as "result" from dual;
+
+
+
+select * from student; 
+
+desc student ;
+
+name ,  rollno ,  sem , dept
+
+select name from student;
+
+
+select name, rollno from student;
+
+
+
+select name as "Student Name", rollno from student;
+
+
+select name as StudentName, rollno from student;
+
+
+select name as Student Name, rollno from student;
+
+
+select 10 + null from student;
+
+
+select 10 + 'null' from dual;
+
+
+select 10 || 'null' from dual;
+
+
+select 'hello' from dual;
+
+select  upper('hello') from dual;
+
+
+select upper(name) from student;
+
+
+select upper(name) as NAME from student;
+
+
+
+select sysdate from dual;
+
+
+dd-mon-yy
+
+dd/mm/yyyy
+mm/dd/yyyy
+
+
+
+
+select to_char(sysdate,'dd/mm/yyyy') from dual;
+
+
+select to_char(sysdate,'mm-dd-yy hh:mi') from dual;
+
+
+select sem from student;
+
+
+select sum(sem) from student;
+
+
+
+rollno  sem
+1             5       6 
+2             3      5
+3             7     10
+----------------
+6           15
+
+
+select sum(rollno) , sum(sem) from student;
+
+
+select rollno ,  sem , sem+rollno as "sum" from student;
+
+
+
+
+
+
+
+
